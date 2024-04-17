@@ -154,7 +154,7 @@ By incorporating these diverse capabilities into a holistic framework, a practic
 
 Designing a system that effectively addresses all the mentioned challenges and provides all the capabilities outlined is undoubtedly a formidable task. However, we recognize the complexity of this endeavor and acknowledge that achieving the ideal solution may not be feasible from the outset. Instead, our approach entails starting with a system that addresses some of the pressing issues and then iteratively updating and enhancing it with new technologies and functionalities over time. By adopting this iterative approach, we aim to incrementally improve the system's capabilities and resilience, ultimately working towards the overarching goal of providing a comprehensive solution that fulfills all requirements and effectively integrates AI and Web3 technologies. This adaptive strategy allows us to navigate the complexities of technological evolution while ensuring that the system remains agile and responsive to emerging challenges and opportunities.
 
-Our proposed system, zk-VIN, aims to leverage blockchain technology to facilitate the exchange of inferences between model developers and users in a secure and transparent manner. Through zk-VIN network, model developers can offer their trained models to users seeking specific predictions or analyses. Users, in turn, can access these inferences by paying with tokens, thereby creating a decentralized marketplace for AI services. To ensure the integrity and trustworthiness of the exchanged inferences, model developers utilize zero-knowledge proofs (ZKPs) to provide verifiable evidence that the requested computations were indeed performed correctly without revealing any sensitive information about the underlying model or data. By integrating ZKPs into the transaction process, our system enhances transparency and trust, enabling users to confidently engage with model developers while preserving the confidentiality of their data and ensuring the authenticity of the provided inferences. Through this innovative blockchain-based solution, we aim to empower both model developers and users to participate in a secure and efficient marketplace for AI services, fostering a decentralized ecosystem that promotes fairness, transparency, and collaboration.
+Our proposed system, zk-VIN, aims to leverage blockchain technology to facilitate the exchange of inferences between model developers and users in a secure and transparent manner. Through the zk-VIN network, model developers can offer their trained models to users seeking specific predictions or analyses. Users, in turn, can access these inferences by paying with tokens, thereby creating a decentralized marketplace for AI services. To ensure the integrity and trustworthiness of the exchanged inferences, model developers utilize zero-knowledge proofs (ZKPs) to provide verifiable evidence that the requested computations were indeed performed correctly without revealing any sensitive information about the underlying model or data. By integrating ZKPs into the transaction process, our system enhances transparency and trust, enabling users to confidently engage with model developers while preserving the confidentiality of their data and ensuring the authenticity of the provided inferences. Through this innovative blockchain-based solution, we aim to empower both model developers and users to participate in a secure and efficient marketplace for AI services, fostering a decentralized ecosystem that promotes fairness, transparency, and collaboration.
 
 \section{Technological Foundations: Exploring Key Technologies}
 To integrate AI and Web3 and provide a comprehensive list of capabilities, we explore various technologies in this section. Some of these technologies are utilized in designing zk-VIN version 1, while others are not yet practical for implementation. However, it's essential to note that zk-VIN will continually update to incorporate any advancements in technologies to evolve into a more practical solution over time.
@@ -164,7 +164,7 @@ To integrate AI and Web3 and provide a comprehensive list of capabilities, we ex
 This subsection delves deeper into describing the technologies utilized in designing zk-VIN 1.0.
 
 \subsubsection{Blockchain}
-Blockchain technology, initially introduced as the underlying technology for cryptocurrencies like Bitcoin \endnote{S. Nakamoto, Bitcoin: A Peer-to-Peer Electronic Cash System, 2008.}, has evolved into a revolutionary tool with diverse applications across various industries. At its core, blockchain is a decentralized, immutable ledger that records transactions in a transparent and secure manner. Its distributed nature eliminates the need for intermediaries, reducing transaction costs and increasing efficiency. One of the key benefits of blockchain is its transparency, as all transactions are recorded on a public ledger accessible to all participants, fostering trust and accountability.
+Blockchain technology, initially introduced as the underlying technology for cryptocurrencies like Bitcoin \cite{Nakamoto2008BitcoinPeerToPeer}, has evolved into a revolutionary tool with diverse applications across various industries. At its core, blockchain is a decentralized, immutable ledger that records transactions in a transparent and secure manner. Its distributed nature eliminates the need for intermediaries, reducing transaction costs and increasing efficiency. One of the key benefits of blockchain is its transparency, as all transactions are recorded on a public ledger accessible to all participants, fostering trust and accountability.
 
 Additionally, blockchain offers enhanced security through cryptographic techniques, making it highly resistant to tampering and fraud. Furthermore, blockchain facilitates peer-to-peer transactions without the need for centralized authorities, empowering individuals to directly exchange value and assets. Overall, blockchain technology has the potential to streamline processes, increase transparency, and democratize access to services, thereby revolutionizing numerous sectors and driving innovation.
 
@@ -180,14 +180,16 @@ In the realm of cutting-edge cryptographic technologies, Zero-Knowledge Machine 
 
 One significant challenge within the Machine Learning as a Service (MLaaS) industry pertains to the integrity of inferences, where clients seek assurance that the model developer has genuinely executed the requested model for their response. For example, consider a client purchasing a premium account from OpenAI to utilize ChatGPT 4. They may question whether OpenAI could opt to use the cheaper ChatGPT 3 instead, thereby saving costs but potentially compromising the quality of responses to a level that the customer cannot distinguish. Similarly, when a patient consults an AI doctor for health predictions, concerns arise about the authenticity of the executed model. Even if the AI doctor acts with honesty, the risk of system compromise, where a genuine model may be replaced with a poisoned one by hackers, poses a serious threat. In both instances, maintaining the integrity of the model remains a paramount concern for the customer.
 
-A naïve solution would involve the model developer sharing the model with the customers, who would then run the model locally to ensure its integrity. However, this approach is not practical due to the large size of models and the limited computational resources available to customers. As an alternative, Ghodsi et al. \endnote{Z. a. G. T. a. G. S. Ghodsi, "Safetynets: Verifiable execution of deep neural networks on an untrusted", Proceedings of the 31st International Conference on Neural Information Processing Systems, 2017. } proposed, for the first time, the use of ZKP to design a solution where the model developer, or a third party like a cloud service, runs the model but generates a proof using ZKP for the customer to ensure that the genuine model has been executed.
+A naïve solution would involve the model developer sharing the model with the customers, who would then run the model locally to ensure its integrity. However, this approach is not practical due to the large size of models and the limited computational resources available to customers. As an alternative, Ghodsi et al. \cite{Ghodsi2017SafetyNetsVE} proposed, for the first time, the use of ZKP to design a solution where the model developer, or a third party like a cloud service, runs the model but generates a proof using ZKP for the customer to ensure that the genuine model has been executed.
 
-While Ghodsi's solution offers benefits, it necessitates the sharing of the model with customers. However, in certain scenarios, model developers may be reluctant to share their models due to concerns about protecting intellectual property. Consequently, in addition to ensuring the integrity of the model, preserving the privacy of the model becomes another significant concern. Thus, the overarching question arises: How can model developers assure customers that the model has been genuinely executed (ensuring the integrity of inference) without divulging any information about the model itself (preserving model privacy)? To address this new complicated problem, Lee et al.\endnote{S. L. a. H. K. a. J. K. a. H. Oh, ""vCNN: Verifiable Convolutional Neural Network"," in IACR Cryptol. ePrint Arch, 2020.} proposed a ZKP-based solution which provide both concerns. Subsequently, other researchers have proposed more efficient ZKP-based solution to address these two concerns \endnote{T. a. X. X. a. Z. Y. Liu, "ZkCNN: Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy", Association for Computing Machinery, 2021. },\endnote{B. F. a. L. Q. a. Z. Z. a. Y. D. a. S. Chu, ""ZEN: An Optimizing Compiler for Verifiable, Zero-Knowledge Neural Network Inferences"," 2021. },\endnote{C. a. L. H. a. C. H. a. S. J. H. a. K. S. Ju, ""Efficient Sum-Check Protocol for Convolution"," 2021. }.
+While Ghodsi's solution offers benefits, it necessitates the sharing of the model with customers. However, in certain scenarios, model developers may be reluctant to share their models due to concerns about protecting intellectual property. Consequently, in addition to ensuring the integrity of the model, preserving the privacy of the model becomes another significant concern. Thus, the overarching question arises: How can model developers assure customers that the model has been genuinely executed (ensuring the integrity of inference) without divulging any information about the model itself (preserving model privacy)? To address this new complicated problem, Lee et al.\cite{Lee2020vCNNVC} proposed a ZKP-based solution which provide both concerns. Subsequently, other researchers have proposed more efficient ZKP-based solution to address these two concerns \cite{Liu2021zkCNNZK},\cite{Feng2021ZENAO},\cite{Ju2021EfficientSP}.
 
+% FIXME: bad wording "provide both concern"
 
 
 
 \section{zk-VIN}
+
 Zero-Knowledge Verified Inference Network (zk-VIN) offers a transformative approach for AI operators seeking to transition their off-chain AI models onto blockchain networks while safeguarding their proprietary algorithms. This framework streamlines the intricate process of model conversion, enabling rapid deployment across multiple blockchain ecosystems. It serves as a seamless bridge between the off-chain world of AI and the on-chain realm, ensuring intellectual property remains veiled through the use of zero-knowledge cryptography. By providing a secure and efficient payment infrastructure, zk-VIN facilitates atomic value exchange for AI services, paving the way for a new era of autonomous AI agents interacting within the blockchain space.
 
 For consumers of AI predictions, zk-VIN offers an additional layer of assurance by eliminating trust assumptions. They confidently rely on the network to validate inputs are processed using the correct and intended AI model, with a cryptographic guarantee of faithful execution.  As a result, consumers of AI services benefit from a transparent, trust-minimized environment where AI predictions are verified, reducing the need for blind trust in the operators' execution.
@@ -254,10 +256,10 @@ This adaptability is a core characteristic, anticipating the need to integrate a
 \node[fill=white, anchor=west, xshift=2mm] at (r2.north west) {\footnotesize\textbf{Node Pool}};
 
 \node[block, anchor=west, text=white] (a) at ([xshift=3mm]r1.west) {Node A};
-\node[block,right=.3cm of a, text=white] (b) {Node B}; 
+\node[block,right=.3cm of a, text=white] (b) {Node B};
 
 \node[block, anchor=west, text=white] (a1) at ([xshift=3mm]r2.west) {Node A};
-\node[block,below=.55cm of a1, text=white] (b1) {Node B}; 
+\node[block,below=.55cm of a1, text=white] (b1) {Node B};
 % %---------
 \node[minimum width=1.75cm, minimum height=1.2cm, anchor=south west] (1) at ([yshift=3mm]r2.north west) {};
 \draw (1.north west)--coordinate[pos=1] (w) ($(1.west)+(.5,0)$)--(1.south west)--(1.south east)--coordinate[pos=1] (z) ($(1.east)+(.5,0)$)--(1.north east)--cycle;
@@ -350,7 +352,7 @@ In order to complete inference workloads for a model, a model node must register
     \label{fig:Fig 3}
 \end{figure}
 
-The network implement sets of blocks, called epochs, in which a registered node must be available. Nodes which register in the current epoch are activated during the following epoch. Model nodes commit compute units per unit of time to the network. Since the compute units for a workload is known ahead of time (see “Transactional Cost” section) the network delegates workloads to fill but not exceed its compute capacity. 
+The network implements sets of blocks, called epochs, in which a registered node must be available. Nodes which register in the current epoch are activated during the following epoch. Model nodes commit compute units per unit of time to the network. Since the compute units for a workload is known ahead of time (see “Transactional Cost” section) the network delegates workloads to fill but not exceed its compute capacity.
 
 It is the expectation a model node will complete delegated workloads during a registered epoch. Model nodes which fail to complete work while registered or otherwise shown to be unavailable will face a penalty.
 
@@ -366,7 +368,7 @@ The network implements a non-zero registration fee for models to prevent floodin
 
 
 \section{Current Execution and Deployment}
-This section provides an overview of the implementations undertaken by the team. Our team has assessed some projects (consisting EZKL, RISC0, ORION and KANG) focused on providing AI solutions to compare and evaluate their performance, as outlined in \endnote{https://brainbench.xyz/} along with detailed information. The following table compares various ZKML projects based on different properties.
+This section provides an overview of the implementations undertaken by the team. Our team has assessed some projects (consisting EZKL, RISC0, ORION and KANG) focused on providing AI solutions to compare and evaluate their performance, as outlined in \cite{BrainbenchXYZ} along with detailed information. The following table compares various ZKML projects based on different properties.
 
 \begin{figure}[!ht]
     \begin{tikzpicture}[font=\normalsize]
@@ -383,39 +385,39 @@ This section provides an overview of the implementations undertaken by the team.
 \arrayrulecolor{gray}
 \hspace{-4.5mm}
 \footnotesize
-\begin{tabular}{|>{\raggedright\arraybackslash}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{0.87cm}>{\centering\arraybackslash}p{0.87cm}>{\centering\arraybackslash}p{0.87cm}>{\centering\arraybackslash}p{2cm}|} 
+\begin{tabular}{|>{\raggedright\arraybackslash}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{0.87cm}>{\centering\arraybackslash}p{0.87cm}>{\centering\arraybackslash}p{0.87cm}>{\centering\arraybackslash}p{2cm}|}
 \hline
-\textbf{PROPERTY} & \textbf{EZKL}  & \textbf{RISC0} & \textbf{ORION} & \textbf{DANIEL KANG'S ZKML}  \\ 
+\textbf{PROPERTY} & \textbf{EZKL}  & \textbf{RISC0} & \textbf{ORION} & \textbf{DANIEL KANG'S ZKML}  \\
 \hline
-\textbf{Source language}  & Rust & Rust & Cairo & Rust  \\ 
+\textbf{Source language}  & Rust & Rust & Cairo & Rust  \\
 \hline
-\textbf{Version}  & 8.1.7 & v0.19.1 & v0.2.2 & main@4378958  \\ 
+\textbf{Version}  & 8.1.7 & v0.19.1 & v0.2.2 & main@4378958  \\
 \hline
-\textbf{API Support}  &  &  &  &   \\ 
+\textbf{API Support}  &  &  &  &   \\
 \hline
-\textbf{Python}  & \check & \cross & \cross & \cross\quad\excla  \\ 
+\textbf{Python}  & \check & \cross & \cross & \cross\quad\excla  \\
 \hline
-\textbf{Javascript}  & \check & \cross & \cross & \cross\quad\excla  \\ 
+\textbf{Javascript}  & \check & \cross & \cross & \cross\quad\excla  \\
 \hline
-\textbf{Rust}  & \check & \check & \check &  \cross\quad\excla \\ 
+\textbf{Rust}  & \check & \check & \check &  \cross\quad\excla \\
 \hline
- \textbf{Others}  & WASM & \circle & \cross & \cross  \\ 
+ \textbf{Others}  & WASM & \circle & \cross & \cross  \\
 \hline
-\textbf{ZK Proving System}  & SNARK & STARK & STARK & SNARK  \\ 
+\textbf{ZK Proving System}  & SNARK & STARK & STARK & SNARK  \\
 \hline
-\textbf{Unbounded Models}  & \cross & \check & \cross & \cross  \\ 
+\textbf{Unbounded Models}  & \cross & \check & \cross & \cross  \\
 \hline
-\textbf{Randomness Operations}  & \cross & \check & \cross & \cross \\ 
+\textbf{Randomness Operations}  & \cross & \check & \cross & \cross \\
 \hline
-\textbf{Audit}  & \cross & \cross & \cross &  \cross \\ 
+\textbf{Audit}  & \cross & \cross & \cross &  \cross \\
 \hline
-\textbf{Native Model Format}  & ONNX & Rust, C$++$ & ONNX & msgpack   \\ 
+\textbf{Native Model Format}  & ONNX & Rust, C$++$ & ONNX & msgpack   \\
 \hline
-\textbf{Supported Operators}  & 89\%  & 100\% & 51\%  & 20\%   \\ 
+\textbf{Supported Operators}  & 89\%  & 100\% & 51\%  & 20\%   \\
 \hline
-\textbf{GPU Acceleration}  &  &  &  &   \\ 
+\textbf{GPU Acceleration}  &  &  &  &   \\
 \hline
-\textbf{CUDA}  & \check\quad & \check\quad\excla & \cross & \cross  \\ 
+\textbf{CUDA}  & \check\quad & \check\quad\excla & \cross & \cross  \\
 \hline
  \textbf{Metal}  & \cross & \check & \cross &  \cross \\
 \hline
@@ -425,7 +427,7 @@ This section provides an overview of the implementations undertaken by the team.
     \label{fig:Fig a}
 \end{figure}
 
-In addition to assessing various properties, our team has evaluated the performance of the underlying ZKP systems within the projects, as depicted in the following figure. 
+In addition to assessing various properties, our team has evaluated the performance of the underlying ZKP systems within the projects, as depicted in the following figure.
 
 \begin{figure}[!ht]
     \centering
@@ -444,43 +446,43 @@ In addition to assessing various properties, our team has evaluated the performa
 \arrayrulecolor{gray}
 \hspace{-5mm}
 \footnotesize
-\begin{tabular}{|>{\raggedright\arraybackslash}p{1.9cm}>{\centering\arraybackslash}p{2.1cm}>{\centering\arraybackslash}p{1.3cm}>{\centering\arraybackslash}p{1.7cm}|} 
+\begin{tabular}{|>{\raggedright\arraybackslash}p{1.9cm}>{\centering\arraybackslash}p{2.1cm}>{\centering\arraybackslash}p{1.3cm}>{\centering\arraybackslash}p{1.7cm}|}
 \hline
-\textbf{8 Cores, 32 GB RAM, CUDA Accelerator} & \textbf{10 Cores, 32 GB RAM, Metal Accelerator} & \textbf{EZKL's Lilith} & \textbf{64 Cores, 128 GB RAM}  \\ 
+\textbf{8 Cores, 32 GB RAM, CUDA Accelerator} & \textbf{10 Cores, 32 GB RAM, Metal Accelerator} & \textbf{EZKL's Lilith} & \textbf{64 Cores, 128 GB RAM}  \\
 \hline
-BENCHMARK & \multicolumn{1}{c}{EZKL}  & \multicolumn{1}{c}{RISC0} & \multicolumn{1}{c|}{ORION}  \\ 
+BENCHMARK & \multicolumn{1}{c}{EZKL}  & \multicolumn{1}{c}{RISC0} & \multicolumn{1}{c|}{ORION}  \\
 \hline
-\textbf{Linear regressions}  &  &  &   \\ 
+\textbf{Linear regressions}  &  &  &   \\
 \hline
- \textbf{Proof Size}  & 4.88kB & 58.18 kB & No data  \\ 
+ \textbf{Proof Size}  & 4.88kB & 58.18 kB & No data  \\
 \hline
-\textbf{Proof Memory Usage}  & 9.93 MB & 1.25 GB & 55.21 MB  \\ 
+\textbf{Proof Memory Usage}  & 9.93 MB & 1.25 GB & 55.21 MB  \\
 \hline
- \textbf{Proof Time}  & 251.00ms & 43 seconds & 707.50ms  \\ 
+ \textbf{Proof Time}  & 251.00ms & 43 seconds & 707.50ms  \\
 \hline
-\textbf{Random forests}  &  &  &   \\ 
+\textbf{Random forests}  &  &  &   \\
 \hline
-\textbf{Proof Size}  & 9.13 kB & 67.27 kB & No data   \\ 
+\textbf{Proof Size}  & 9.13 kB & 67.27 kB & No data   \\
 \hline
- \textbf{Proof Memory Usage}  & 440.43 MB & 9.75 GB & No data  \\ 
+ \textbf{Proof Memory Usage}  & 440.43 MB & 9.75 GB & No data  \\
 \hline
-\textbf{Proof Time}  & 4 seconds & No data &  No data \\ 
+\textbf{Proof Time}  & 4 seconds & No data &  No data \\
 \hline
-\textbf{Svm classifications}  &  &  &   \\ 
+\textbf{Svm classifications}  &  &  &   \\
 \hline
- \textbf{Proof Size}  & 7.00 kB & 64.02 kB & No data   \\ 
+ \textbf{Proof Size}  & 7.00 kB & 64.02 kB & No data   \\
 \hline
- \textbf{Proof Memory Usage}  & 14.89 MB & 4.86 GB & 55.16 MB  \\ 
+ \textbf{Proof Memory Usage}  & 14.89 MB & 4.86 GB & 55.16 MB  \\
 \hline
- \textbf{Proof Time}  & 120.60ms & 2 minutes 54 seconds & 758.50ms  \\ 
+ \textbf{Proof Time}  & 120.60ms & 2 minutes 54 seconds & 758.50ms  \\
 \hline
-\textbf{Te regressions}  &  &  &   \\ 
+\textbf{Te regressions}  &  &  &   \\
 \hline
- \textbf{Proof Size}  & 7.00 kB & 58.18 kB &  No data  \\ 
+ \textbf{Proof Size}  & 7.00 kB & 58.18 kB &  No data  \\
 \hline
- \textbf{Proof Memory Usage}  & 14.91 MB & 1.25 GB & 64.46 MB  \\ 
+ \textbf{Proof Memory Usage}  & 14.91 MB & 1.25 GB & 64.46 MB  \\
 \hline
- \textbf{Proof Time}  & 113.00ms & 43 seconds &  994.00ms \\ 
+ \textbf{Proof Time}  & 113.00ms & 43 seconds &  994.00ms \\
 \hline
 \end{tabular}
 };
@@ -495,9 +497,9 @@ Three different projects are compared for four AI problems (linear regression, r
 
 The evaluation of properties and performance across various ZKML projects has revealed that EZKL emerges as the most feature-complete and efficient framework for this purpose, which explains its widespread adoption within the community. As contributors to the EZKL project, Inference Lab strives to integrate EZKL with blockchain to explore new ideas. Meanwhile, our team also works on other ZKML projects to enhance accessibility and further refine the final product.
 
-ZKML uses Halo2 to generate proving and verification keys. While many proof systems need a trusted setup during the circuit creation process, Halo2 is a ZKP protocol that enables the construction of proofs without a trusted setup. It aims to facilitate the recursive composition of zk-SNARKS, allowing for more scalable and efficient proofs \endnote{"https://github.com/zcash/halo2/tree/main".}. Halo2 represents the next generation of zk-SNARK technology after the original Halo protocol. 
+ZKML uses Halo2 to generate proving and verification keys. While many proof systems need a trusted setup during the circuit creation process, Halo2 is a ZKP protocol that enables the construction of proofs without a trusted setup. It aims to facilitate the recursive composition of zk-SNARKS, allowing for more scalable and efficient proofs \cite{ZcashHalo2GH}. Halo2 represents the next generation of zk-SNARK technology after the original Halo protocol.
 
-EZKL is a library and command-line tool for doing inference for deep learning models and other computational graphs in a zk-snark (ZKML). EZKL works as follow \endnote{"https://github.com/zkonduit/ezkl".}:
+EZKL is a library and command-line tool for doing inference for deep learning models and other computational graphs in a zk-snark (ZKML). EZKL works as follow \cite{ZconduitEZKLGH}:
 
 \begin{figure}[!ht]
     \centering
@@ -547,7 +549,7 @@ EZKL is a library and command-line tool for doing inference for deep learning mo
 
 \begin{enumerate}
     \item 	Firstly a neural network is defined in form of a computational graph using pytorch or tensorflow.
-\item	Using train date, the defined moded will be trained and the final model will export as an .onnx file.
+\item	Using training data, the defined model will be trained and the final model will export as an .onnx file.
 \item	Point ezkl to the .onnx and input of the model (as .json file) to generate a ZK-SNARK circuit which will work as the following figure. From here a nearly 1:1 representation of the model is outlaid in a circuit.
 
 \end{enumerate}
@@ -556,7 +558,7 @@ EZKL is a library and command-line tool for doing inference for deep learning mo
 
 \section{Remained Challenges and future work}
 
-This section first discusses remained concerns such as IP risk and data privacy, then it explores future enhancements for zk-VIN. We anticipate zk-VIN's potential to support emerging technologies like FHEML, verifiable FHE, MPCML, and others. While these technologies currently pose computational challenges and are not yet practical, advancements in technology suggest that efficient solutions will become available over time. Consequently, zk-VIN remains adaptable for updates to accommodate new technologies and services.
+This section first discusses remaining concerns such as IP risk and data privacy, then it explores future enhancements for zk-VIN. We anticipate zk-VIN's potential to support emerging technologies like FHEML, verifiable FHE, MPCML, and others. While these technologies currently pose computational challenges and are not yet practical, advancements in technology suggest that efficient solutions will become available over time. Consequently, zk-VIN remains adaptable for updates to accommodate new technologies and services.
 
 \subsection{Security evaluation}
 
@@ -564,15 +566,18 @@ The following provides an overview of the cybersecurity concerns present in the 
 
 \subsubsection{Reverse Engineering Risk}
 
-One of the most valuable aspects of zk-VIN is the aggregation of inferences. Having a clear picture of how often and by whom models are being utilized is a whole industry on its own. However this may create a new form of IP risk yet to be seen at scale. With a sufficient set of inputs to outputs from a particular model, a sophisticated 3rd party could train a similar or competing model using published data . Similar approaches have been seen by crowdsourcing prompt to response datasets from ChatGPT and then fine tuning GPTv2 to achieve surprisingly good results. 
+One of the most valuable aspects of zk-VIN is the aggregation of inferences. Having a clear picture of how often and by whom models are being utilized is a whole industry on its own. However this may create a new form of IP risk yet to be seen at scale. With a sufficient set of inputs to outputs from a particular model, a sophisticated 3rd party could train a similar or competing model using published data. Similar approaches have been seen by crowdsourcing prompt-to-response datasets from ChatGPT and then fine tuning GPTv2 to achieve surprisingly good results.
+
 \textbf{* IP Replication Risk}
 
-While not a perfect analogy, one must not assume the process of zk-circuit generation to proving and veriﬁcation keys is strictly one way as it would be with any secure hash function. There may be artifacts in the keys which give hints about the original circuit design and therefore the underlying model used to generate the circuits \endnote{E. C. A. T. E. \&. V. M. Ben-Sasson, ""Succinct non-interactive zero-knowledge for a von Neumann architecture"," In 23rd USENIX Security Symposium (USENIX Security 14), 2014.}. While it is likely computationally impractical to reverse this process and regenerate the original model from the keys, the risk still theoretically exists.
+While not a perfect analogy, one must not assume the process of zk-circuit generation to proving and veriﬁcation keys is strictly one way as it would be with any secure hash function. There may be artifacts in the keys which give hints about the original circuit design and therefore the underlying model used to generate the circuits \cite{BenSasson2014SuccinctNZ}. While it is likely computationally impractical to reverse this process and regenerate the original model from the keys, the risk still theoretically exists.
+
 \textbf{* Public Veriﬁcation Key}
 
 \subsubsection{Security Risk}
 
-During the initial circuit generation phase, certain proving systems (namely zk-SNARK) require a set of keys to be generated and securely destroyed. Each model deployed may require a trusted setup which creates a potential attack vector \endnote{A. G. I. M. Sean Bowe, ""Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model"," IACR Cryptology ePrint Archive, 2017}.
+During the initial circuit generation phase, certain proving systems (namely zk-SNARK) require a set of keys to be generated and securely destroyed. Each model deployed may require a trusted setup which creates a potential attack vector \cite{Bowe2017ScalableMC}.
+
 \textbf{* Trusted Setup Risk}
 
 There are a few methods to mitigate this which are in early development. Recently ahead of the Unirep v2 launch, a call to the public was made to assist in a public trusted setup generation process (which Inference Labs proudly participated in) and the tools are open source to repeat this process. This process can be replicated at scale and at the protocol level, allowing nodes on the network to contribute to the process as new models are registered on the network and provide incentives for nodes to participate. This also further increases the security of the setup process and the overall network.
@@ -582,9 +587,10 @@ There are a few methods to mitigate this which are in early development. Recentl
 
 Drawing inspiration from Kalai and Rothblum’s ”From obfuscation to the security of Fiat-Shamir for proofs”, the maturity and widespread adoption of a technology often serve as robust indicators of its security and reliability. Historically, technologies that withstand the test of time and are adopted at scale have undergone extensive scrutiny by the community, leading to the identiﬁcation and rectiﬁcation of potential vulnerabilities. This iterative process of challenge and reﬁnement underscores the signiﬁcance of a technology’s age as a proxy for its security robustness.
 
-zk-SNARKS and zk-STARKS are exemplary cases in point. These cryptographic protocols, though relatively nascent, have rapidly gained traction in the domain of privacy-preserving transactions and veriﬁable computations. Their growing adoption, especially in decentralized and privacy-focused applications, signiﬁes the community’s increasing conﬁdence in their security properties. The research by Kalai and Rothblum, among others, has shed light on the foundational principles and potential vulnerabilities of such zero-knowledge proof systems, contributing to their ongoing evolution and solidifying their position in the cryptographic landscape \endnote{Y. T. \&. R. R. Kalai, ""From obfuscation to the security of Fiat-Shamir for proofs"," In Annual International Cryptology Conference, 2017.}.
+zk-SNARKS and zk-STARKS are exemplary cases in point. These cryptographic protocols, though relatively nascent, have rapidly gained traction in the domain of privacy-preserving transactions and veriﬁable computations. Their growing adoption, especially in decentralized and privacy-focused applications, signiﬁes the community’s increasing conﬁdence in their security properties. The research by Kalai and Rothblum, among others, has shed light on the foundational principles and potential vulnerabilities of such zero-knowledge proof systems, contributing to their ongoing evolution and solidifying their position in the cryptographic landscape \cite{Kalai2017FromOT}.
 
 \subsubsection{Data Privacy}
+
 When a user sends a query to a server and expects the inference of an AI model, they inevitably expose their data to the server. While the user may trust the model's integrity, as the server can generate proof that the requested model was indeed used, their data's privacy remains compromised. Additionally, the server gains access to the output of the AI model, which may concern the user. For example, imagine a patient sending their CT scan to an AI doctor for diagnosis. The patient may be uncomfortable with the server having access to their scan and knowing the resulting diagnosis and potential illnesses. This privacy concern is prevalent in all current ZKML solutions, including our product, zk-VIN.
 
 
@@ -601,17 +607,20 @@ Current solutions in ZKML face various limitations, such as lengthy proof genera
 
 Fully Homomorphic Encryption (FHE) stands as a groundbreaking cryptographic technique that allows computations to be performed directly on encrypted data without the need for decryption at first. This transformative capability addresses the critical challenge of preserving data privacy while still enabling data processing and analysis. Applications of FHE are vast and impactful in privacy-enhancing technologies, however, in machine learning, FHE enables secure computation on encrypted data, allowing companies to collaborate on sensitive datasets without revealing the underlying information, or allows a developer to run a model on encrypted data from the customers.
 
-The concept of homomorphic encryption dates back to the 1970s, with the foundational work of Rivest, Adleman, and Dertouzos on partially homomorphic encryption. Over the years, researchers including Craig Gentry made significant breakthroughs in the development of fully homomorphic encryption, culminating in Gentry’s groundbreaking work in 2009 \endnote{C. Gentry, ""Fully homomorphic encryption using ideal lattices"," in Association for Computing Machinery, 2009}. Since then, there has been ongoing research to improve the efficiency and practicality of FHE systems \endnote{M. v. D. a. C. G. a. S. H. a. V. Vaikuntanathan, ""Fully Homomorphic Encryption over the Integers"," in International Conference on the Theory and Application of Cryptographic Techniques, 2010. },\endnote{Z. a. G. C. a. V. V. Brakerski, ""(Leveled) fully homomorphic encryption without bootstrapping"," in Association for Computing Machinery, 2012. },\endnote{C. G. a. A. S. a. B. Waters, ""Homomorphic Encryption from Learning with Errors: Conceptually-Simpler, Asymptotically-Faster, Attribute-Based"," 2013. },\endnote{J. H. C. a. A. K. a. M. K. a. Y. Song, ""Homomorphic Encryption for Arithmetic of Approximate Numbers"," in International Conference on the Theory and Application of Cryptology and Information Security, 2017.},. Despite much improvement and research in FHE, computational complexity and overhead of the current FHE solutions prevent the scheme to be used very much in industries. However, since is improving daily and ongoing advancements in FHE algorithms and implementations hold the promise of making practical deployments of this technology increasingly feasible, unlocking new possibilities for secure and privacy-preserving data processing in different industries such as AI.
+The concept of homomorphic encryption dates back to the 1970s, with the foundational work of Rivest, Adleman, and Dertouzos on partially homomorphic encryption. Over the years, researchers including Craig Gentry made significant breakthroughs in the development of fully homomorphic encryption, culminating in Gentry’s groundbreaking work in 2009 \cite{Gentry2009FullyHE}. Since then, there has been ongoing research to improve the efficiency and practicality of FHE systems \cite{Dijk2010FullyHE}, \cite{Brakerski2012LeveledFH}, \cite{Gentry2013HomomorphicEF}, \cite{Cheon2017HomomorphicEF}. Despite much improvement and research in FHE, computational complexity and overhead of the current FHE solutions prevent the scheme from being used very much in industries. However, science is improving daily and ongoing advancements in FHE algorithms and implementations hold the promise of making practical deployments of this technology increasingly feasible, unlocking new possibilities for secure and privacy-preserving data processing in different industries such as AI.
 
-In addition to concerns regarding complexity and performance, there are other considerations in FHE-based systems, particularly when applied to MLaaS. Similar to the integrity inference concern previously discussed, what if the model developer does not execute the genuine model? This raises the concept of Verifiable Fully Homomorphic Encryption (VFHE). VFHE expands on the capabilities of FHE by allowing parties to verify the accuracy of computations performed on encrypted data without decryption \endnote{C. K. A. H. Alexander Viand, ""Verifiable Fully Homomorphic Encryption"," 2023. }, \endnote{C. K. A. P. C. T. J.-P. H. Sylvain Chatel, ""Verifiable Encodings for Secure Homomorphic Analytics"," 2024.}. This introduces an extra layer of trust and assurance in applications where the integrity and accuracy of computations are crucial. By merging the privacy-preserving attributes of FHE with the privacy-preserving and verifiability of cryptographic proofs (like ZKP), VFHE presents a potent tool for enhancing data security, integrity, and trust across a wide array of applications, spanning from secure outsourcing and MLaaS to decentralized finance and beyond.
+% FIXME bad wording "being used very much in the industries"
 
-However, this intriguing idea is not yet practical. While researchers strive to enhance both FHE and VFHE schemes, the computational requirements for the current solutions remain prohibitively high, rendering these schemes impractical \endnote{K. B. H. V. L. P. J. S. Shahla Atapoor, ""Verifiable FHE via Lattice-based SNARKs"," 2024. }. Nevertheless, our team consistently monitors advancements in new schemes to identify any potential improvements in this field and update zk-VIN accordingly. This underscores the importance of ensuring that our design possesses the capability for updatability, allowing it to be seamlessly updated with any new advancements.
+In addition to concerns regarding complexity and performance, there are other considerations in FHE-based systems, particularly when applied to MLaaS. Similar to the integrity inference concern previously discussed, what if the model developer does not execute the genuine model? This raises the concept of Verifiable Fully Homomorphic Encryption (VFHE). VFHE expands on the capabilities of FHE by allowing parties to verify the accuracy of computations performed on encrypted data without decryption \cite{Viand2023VerifiableFH}, \cite{Chatel2022VerifiableEF}. This introduces an extra layer of trust and assurance in applications where the integrity and accuracy of computations are crucial. By merging the privacy-preserving attributes of FHE with the privacy-preserving and verifiability of cryptographic proofs (like ZKP), VFHE presents a potent tool for enhancing data security, integrity, and trust across a wide array of applications, spanning from secure outsourcing and MLaaS to decentralized finance and beyond.
+
+However, this intriguing idea is not yet practical. While researchers strive to enhance both FHE and VFHE schemes, the computational requirements for the current solutions remain prohibitively high, rendering these schemes impractical \cite{Atapoor2024VerifiableFV}. Nevertheless, our team consistently monitors advancements in new schemes to identify any potential improvements in this field and update zk-VIN accordingly. This underscores the importance of ensuring that our design possesses the capability for updatability, allowing it to be seamlessly updated with any new advancements.
 
 In the future, we anticipate the introduction of practical and efficient VFHE solutions. Subsequently, it will become feasible to design a system wherein a user encrypts their own data and sends it to the server. The server will then execute the AI model to generate proof, with the entire process being verified using VFHE. This approach ensures that neither the input nor the output of the AI model is readable by the server, while also proving the integrity of the model. Finally, the verified and encrypted output will be sent back to the user, who can decrypt it and verify the proof. Such a theoretical solution would effectively address the privacy concerns that currently plague AI solutions.
 
 
 \subsubsection{MPC}
-Multi-party computation (MPC), also referred to as secure multi-party computation (SMPC), was pioneered by Andrew Yao in 1982 \endnote{A. C. Yao, ""Protocols for secure computations"," in 23rd Annual Symposium on Foundations of Computer Science, 1982.}. This revolutionary concept, illustrated by Yao's Millionaires' Problem, enables two millionaires to ascertain which holds a greater value without divulging their actual wealth to each other. In a broader sense, MPC facilitates multiple parties to collectively compute a function over their individual private inputs without revealing any information about those inputs to one another. Verifiable Multi-Party Computation (VMPC) extends the capabilities of MPC by introducing mechanisms to verify the correctness and integrity of computed results without compromising the privacy of the inputs \endnote{B. S. a. M. Veeningen, ""Universally Veriﬁable Multiparty Computation from Threshold Homomorphic Cryptosystems"," 2015.}, \endnote{P. L. \&. A. Pankova, ""Verifiable Computation in Multiparty Protocols with Honest Majority"," in International Conference on Provable Security, 2014.}.
+
+Multi-party computation (MPC), also referred to as secure multi-party computation (SMPC), was pioneered by Andrew Yao in 1982 \cite{Yao1982ProtocolsFS}. This revolutionary concept, illustrated by Yao's Millionaires' Problem, enables two millionaires to ascertain which holds a greater value without divulging their actual wealth to each other. In a broader sense, MPC facilitates multiple parties to collectively compute a function over their individual private inputs without revealing any information about those inputs to one another. Verifiable Multi-Party Computation (VMPC) extends the capabilities of MPC by introducing mechanisms to verify the correctness and integrity of computed results without compromising the privacy of the inputs \cite{Schoenmakers2015UniversallyVM}, \cite{Laud2014VerifiableCI}.
 
 The combination of MPC and ML offers various applications, one of which involves multiple financial institutions utilizing MPC techniques to collectively assess loan applicants' creditworthiness without compromising sensitive customer data. Each institution securely shares their trained ML model parameters, which are then aggregated through MPC to generate joint predictions on new loan applicants' data. This collaborative approach enables institutions to collectively make decisions regarding loan approvals or denials while upholding the privacy and security of customer data. Leveraging MPC allows for effective collaboration on inference tasks while ensuring data confidentiality and compliance with privacy regulations. Additionally, exploring the integration of ML and VMPC presents another promising avenue for future revisions of zk-VIN.
 
@@ -621,15 +630,20 @@ The combination of MPC and ML offers various applications, one of which involves
 We anticipate the development of a sophisticated cryptographic system in the coming years, offering various capabilities. For instance, patients may encrypt their health data and transmit it to an AI doctor. Subsequently, the AI doctor will execute an AI model for inference and generate a proof, assuring the patient of the genuine execution of the model. Neither the patient nor the model developer will be required to divulge personal data or model information to each other. Such a system promises data and model privacy, coupled with model integrity. However, the design of such a system is intricate, and no solution currently exists. We foresee its development in the near future, prompting our team to prioritize the updatability capability for the zk-VIN system.
 
 \subsection{Potential Usages of zk-VIN}
+
 The Inference Lab Inc. is actively pursuing Privacy Enhancement Technologies (PETs) and investigating potential applications of zk-VIN. One evident application of zk-VIN, as discussed in the paper, is when a designer seeks assurance that a prompt was executed by the designated server. Moreover, zk-VIN holds promise in addressing numerous challenges related to responsible AI beyond this specific scenario.
 
 The significance of responsible AI has come to the forefront in recent years, especially following the startling revelations about ChatGPT, Sora, and other AI models. These incidents have prompted widespread discussions among people and governments, raising concerns about the future implications of AI. With the increasing reliance on AI for decision-making and various tasks, there is a growing apprehension about the potential misuse of AI by companies and governments. Ensuring the correctness and reliability of AI systems becomes crucial in this context. While one simplistic solution may involve making all AI models publicly accessible for scrutiny, this approach could deter companies from investing in products that would be disclosed. Many prefer to safeguard the details of their models as intellectual property. Responsible AI emerges as a promising solution to address these concerns comprehensively. It encompasses principles and practices aimed at fostering ethical and accountable development, deployment, and use of AI systems, thereby promoting transparency, fairness, and trustworthiness in AI technologies.
 
 Responsible AI refers to the ethical and accountable development, deployment, and use of artificial intelligence systems. It encompasses principles and practices aimed at ensuring AI systems operate in a manner that respects human rights, diversity, fairness, transparency, and privacy, while also minimizing potential biases and unintended consequences. Responsible AI involves robust governance frameworks, clear guidelines for ethical decision-making, ongoing monitoring and evaluation, and meaningful engagement with stakeholders throughout the AI lifecycle. By prioritizing responsible AI practices, organizations and developers can build trust with users, mitigate risks, and maximize the societal benefits of AI technologies.
 
-ZKML and other privacy-preserving machine learning (PPML) technologies hold the potential to fulfill various objectives of responsible AI. For example, social networks such as Twitter, YouTube, Instagram, and others utilize AI models to curate content for their users. However, they have faced accusations that these AI models do not exhibit fair behavior across different user groups. For instance, there have been discussions regarding YouTube's algorithm potentially discriminating against minority creators \endnote{"https://hackernoon.com/does-youtubes-algorithm-discriminate-against-minority-creators"}. Additionally, Facebook's algorithms have been criticized for promoting hate speech and toxic content \endnote{"https://peoplesdispatch.org/2021/10/08/how-facebook-algorithms-promote-hate-and-toxic-content/".}. Twitter has even acknowledged bias in its algorithm, particularly regarding right-wing politicians and news outlets, which can impact national policies \endnote{"https://www.theguardian.com/technology/2021/oct/22/twitter-admits-bias-in-algorithm-for-rightwing-politicians-and-news-outlets".}.
+ZKML and other privacy-preserving machine learning (PPML) technologies hold the potential to fulfill various objectives of responsible AI. For example, social networks such as Twitter, YouTube, Instagram, and others utilize AI models to curate content for their users. However, they have faced accusations that these AI models do not exhibit fair behavior across different user groups. For instance, there have been discussions regarding YouTube's algorithm potentially discriminating against minority creators \cite{YoutubeAlgorithmHackernoon}. Additionally, Facebook's algorithms have been criticized for promoting hate speech and toxic content \cite{FacebookAlgorithmPeoplesDispatch}. Twitter has even acknowledged bias in its algorithm, particularly regarding right-wing politicians and news outlets, which can impact national policies \cite{TwitterBiasTheGuardian}.
 
-To address this issue, companies should demonstrate the fairness of their AI models. A naïve solution would be for these companies to publicly disclose their algorithms. However, this approach conflicts with their intellectual property rights. Therefore, ZKML proposes a solution whereby companies can prove that they are using a specific algorithm for all users without revealing any information about their models. Kang et al. \endnote{"https://medium.com/@danieldkang/tensorplonk-a-gpu-for-zkml-delivering-1-000x-speedups-d1ab0ad27e1c".} have provided insights into the ZKML system, which operates using GPU acceleration (GPA). The use of GPA can accelerate the proof generation process by over 1000 times. Consequently, they suggest that Twitter could generate proofs for 1\% of the 500 million tweets per day from its users for approximately \$21,000 per day. Given that this cost represents less than 0.5\% of Twitter's annual infrastructure expenses, it is feasible for Twitter to demonstrate the fairness of its feed AI models.
+%FIXME: might it be better to cite the original "Algorithmic Amplification of Politics on Twitter" instead the guardian article here?
+%FIXME: see also https://about.fb.com/news/2021/09/research-teen-well-being-and-instagram/ about FB
+
+
+To address this issue, companies should demonstrate the fairness of their AI models. A naïve solution would be for these companies to publicly disclose their algorithms. However, this approach conflicts with their intellectual property rights. Therefore, ZKML proposes a solution whereby companies can prove that they are using a specific algorithm for all users without revealing any information about their models. Kang et al. \cite{TensorPlonkMedium}. have provided insights into the ZKML system, which operates using GPU acceleration (GPA). The use of GPA can accelerate the proof generation process by over 1000 times. Consequently, they suggest that Twitter could generate proofs for 1\% of the 500 million tweets per day from its users for approximately \$21,000 per day. Given that this cost represents less than 0.5\% of Twitter's annual infrastructure expenses, it is feasible for Twitter to demonstrate the fairness of its feed AI models.
 
 In the future, as AI models increasingly handle decision-making and various tasks, responsible AI will become even more critical than it is today. Simultaneously, with a shift towards decentralization, most communications and transactions are expected to occur on Web3. In such an environment, zk-VIN could play a vital role by enabling AI model operators to broadcast proofs of honesty on Web3 without compromising the confidentiality of their model details.
 
@@ -654,28 +668,14 @@ In summary, zk-VIN implements the responsible and ethical application of AI with
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%\bibliographystyle{IEEEtran}
-%\bibliography{reference}
-
-
 \clearpage
-\printendnotes
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+
+
+%\printendnotes
 
 \end{document}
